@@ -17,6 +17,7 @@ services:
 
   - type: cron
     name: keep-awake
+    plan: free
     runtime: image
     image:
       url: alpine:latest
