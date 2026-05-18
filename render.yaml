@@ -1,7 +1,7 @@
 services:
   - type: web
     name: picoclaw-bot
-    runtime: image
+    runtime: docker
     repo: https://github.com/rahamanleon/Picoclaw-Render-.git
     plan: free
     dockerfilePath: ./Dockerfile
@@ -17,6 +17,7 @@ services:
 
   - type: cron
     name: keep-awake
-    runtime: shell
+    runtime: image
+    image: alpine:latest
     schedule: "*/5 * * * *"
-    startCommand: curl -s -o /dev/null https://picoclaw-bot.onrender.com/health
+    dockerCommand: wget -q -O /dev/null https://picoclaw-bot.onrender.com/health
