@@ -17,5 +17,6 @@ services:
 
   - type: cron
     name: keep-awake
+    runtime: shell
     schedule: "*/5 * * * *"
-    command: curl -s -o /dev/null https://picoclaw-bot.onrender.com/health
+    startCommand: curl -s -o /dev/null https://picoclaw-bot.onrender.com/health
