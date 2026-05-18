@@ -15,11 +15,4 @@ services:
     healthCheckPath: /health
     autoDeploy: true
 
-  - type: cron
-    name: keep-awake
-    plan: free
-    runtime: image
-    image:
-      url: alpine:latest
-    schedule: "*/5 * * * *"
-    dockerCommand: wget -q -O /dev/null https://picoclaw-bot.onrender.com/health
+
