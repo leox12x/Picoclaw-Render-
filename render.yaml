@@ -18,6 +18,7 @@ services:
   - type: cron
     name: keep-awake
     runtime: image
-    image: alpine:latest
+    image:
+      url: alpine:latest
     schedule: "*/5 * * * *"
     dockerCommand: wget -q -O /dev/null https://picoclaw-bot.onrender.com/health
