@@ -2,7 +2,7 @@ services:
   - type: web
     name: picoclaw-bot
     runtime: image
-    repo: https://github.com/YOUR_USER/YOUR_REPO
+    repo: https://github.com/rahamanleon/Picoclaw-Render-
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
