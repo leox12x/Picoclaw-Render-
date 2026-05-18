@@ -1,0 +1,44 @@
+{
+  "version": 3,
+  "agents": {
+    "defaults": {
+      "workspace": "/root/.picoclaw/workspace",
+      "restrict_to_workspace": true,
+      "model_name": "stepfun-flash",
+      "max_tokens": 32768,
+      "max_tool_iterations": 50,
+      "steering_mode": "one-at-a-time"
+    }
+  },
+  "model_list": [
+    {
+      "model_name": "stepfun-flash",
+      "provider": "",
+      "model": "nvidia/stepfun-ai/step-3.5-flash",
+      "thinking_level": "off"
+    }
+  ],
+  "gateway": {
+    "host": "0.0.0.0",
+    "port": 10000,
+    "hot_reload": false,
+    "log_level": "warn"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "allow_from": []
+    }
+  },
+  "tools": {
+    "web": {
+      "enabled": true,
+      "duckduckgo": {
+        "enabled": true,
+        "max_results": 5
+      },
+      "provider": "auto",
+      "prefer_native": true
+    }
+  }
+}
