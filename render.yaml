@@ -2,7 +2,7 @@ services:
   - type: web
     name: picoclaw-bot
     runtime: image
-    repo: https://github.com/rahamanleon/Picoclaw-Render-
+    repo: https://github.com/rahamanleon/Picoclaw-Render-.git
     plan: free
     dockerfilePath: ./Dockerfile
     envVars:
@@ -15,8 +15,7 @@ services:
     healthCheckPath: /health
     autoDeploy: true
 
-cron:
-  - name: keep-awake
+  - type: cron
+    name: keep-awake
     schedule: "*/5 * * * *"
-    command: |
-      curl -s -o /dev/null https://picoclaw-bot.onrender.com/health
+    command: curl -s -o /dev/null https://picoclaw-bot.onrender.com/health
