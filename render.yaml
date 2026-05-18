@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: picoclaw-bot
+    runtime: image
+    repo: https://github.com/YOUR_USER/YOUR_REPO
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NVIDIA_API_KEY
+        sync: false
+      - key: TELEGRAM_TOKEN
+        sync: false
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
+    autoDeploy: true
+
+cron:
+  - name: keep-awake
+    schedule: "*/5 * * * *"
+    command: |
+      curl -s -o /dev/null https://picoclaw-bot.onrender.com/health
